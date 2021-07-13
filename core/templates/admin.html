@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <script src="https://kit.fontawesome.com/9674323289.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>admin site</title>
+</head>
+<body>
+{% block content %}
+      <p class="text-center text-decoration-underline">for admins only</p>
+    <div class="container">
+        {% for contact in contact %}
+<div class="card">
+  <div class="card-header">
+    {{ contact.name }}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ contact.message }}</p>
+      <footer class="blockquote-footer">{{ contact.email}}</footer>
+    </blockquote>
+  </div>
+    <div class="text-center">
+<a class="btn btn-danger" href="{% url 'delete' contact.id %}" type="button">delete</a>
+    </div>
+</div>
+    {% endfor %}
+    </div>
+<style>
+.card{
+    margin-top: 30px;
+}
+</style>
+{% endblock %}
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

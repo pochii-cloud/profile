@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{% block content %}
+
+    <div class="col-md-9">
+
+<form class="myform" method="post">
+     <h2 class="text-center">Admin login</h2>
+    {% csrf_token %}
+     <label>username</label>
+    <input type="text" name="Username">
+   <label>password</label>
+    <input type="password" name="password">
+    <button class="btn btn-success" type="submit">login</button>
+    <p>not an admin?click here for<a href="{% url 'base' %}">homepage</a></p>
+</form>
+ </div>
+    <style>
+    .myform{
+        display: grid;
+        margin-left: 200px;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+{% endblock %}
+</body>
+</html>
