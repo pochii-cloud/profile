@@ -73,12 +73,6 @@
     </div>
 </div>
 </section>
-
-{#    <form method="post">#}
-{#    {% csrf_token %}#}
-{#         {{ form }}#}
-{#<button class="btn btn-success" type="submit">submit</button>#}
-{#</form>#}
 <style>
 *{
     margin: 0;
@@ -90,7 +84,7 @@
     min-height: 100vh;
     padding: 50px 100px ;
     display: flex;
-    justify-content: center;
+    {#justify-content: center;#}
     align-items: center;
     flex-direction: column;
     background-image: url('{% static 'images/back.jpg'%}');
@@ -205,14 +199,18 @@
     font-size: 18px;
 }
 @media(max-width: 991px) {
+
     .contact {
         padding: 50px;
+
+    }
+    .content{
+        margin-top: 0;
     }
 
     .container {
         flex-direction: column;
     }
-
     .container .contactInfo {
         margin-bottom: 40px;
     }
